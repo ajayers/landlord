@@ -1,0 +1,12 @@
+*.gem
+.bundle
+*.lock
+gemfiles/*.lock
+pkg/*
+*.log
+.idea
+*.sw[pno]
+spec/config/database.yml
+spec/dummy/config/database.yml
+tmp
+.DS_Store

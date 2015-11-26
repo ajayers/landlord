@@ -1,0 +1,5 @@
+Description:
+  Creates an initializer for landlord.
+
+Example:
+  `rails generate landlord:install`
