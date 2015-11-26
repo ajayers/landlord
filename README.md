@@ -2,8 +2,9 @@
 
 *Multitenancy for Rails and ActiveRecord on PostgreSQL*
 
-This gem started from the Apartment gem but was stripped down, refactored, and re-configured to focus solely on PostgreSQL and the use
-of ```search_path```.
+# Credit
+
+This gem started from the [Apartment](https://github.com/influitive/apartment) gem. The original code was stripped down and refactored to focus solely on PostgreSQL and the use of ```search_path```.
 
 ## Installation
 
