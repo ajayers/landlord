@@ -121,10 +121,10 @@ landlord_namespace = namespace :landlord do
   end
 
   namespace :schema do
-    desc 'Create a db/schema_landlord.rb file that is portable against any DB supported by AR'
+    desc 'Create a db/landlord/schema.rb file that is portable against any DB supported by AR'
     task :dump => [:load_config] do
       require 'landlord/schema_dumper'
-      filename = ENV['LANDLORD_SCHEMA'] || File.join(ActiveRecord::Tasks::DatabaseTasks.db_dir, 'schema_landlord.rb')
+      filename = ENV['LANDLORD_SCHEMA'] || File.join(ActiveRecord::Tasks::DatabaseTasks.db_dir, 'landlord', 'schema.rb')
       File.open(filename, "w:utf-8") do |file|
         Landlord::SchemaDumper.dump(ActiveRecord::Base.connection, file)
       end

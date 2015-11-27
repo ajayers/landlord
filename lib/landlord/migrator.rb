@@ -5,6 +5,10 @@ module Landlord
 
     extend self
 
+    def migrations_paths
+      [Rails.root.join('db', 'landlord', 'migrate')]
+    end
+
     def create_tenant_schema_migrations_table(database)
       table_name = "#{database}.#{ActiveRecord::SchemaMigration.table_name}"
       index_name = "#{database}.#{ActiveRecord::SchemaMigration.index_name}"
@@ -24,8 +28,7 @@ module Landlord
         create_tenant_schema_migrations_table(database)
 
         version = ENV["VERSION"] ? ENV["VERSION"].to_i : nil
-        paths = ActiveRecord::Migrator.migrations_paths.collect {|p| "#{p}_landlord"}
-        ActiveRecord::Migrator.migrate(paths, version) do |migration|
+        ActiveRecord::Migrator.migrate(migrations_paths, version) do |migration|
            ActiveRecord::Base.connection.clear_query_cache
 
           ENV["SCOPE"].blank? || (ENV["SCOPE"] == migration.scope)
