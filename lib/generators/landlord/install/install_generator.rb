@@ -7,7 +7,7 @@ module Landlord
     end
 
     def create_directory
-      empty_directory File.join("db", "landlord", "migrate"
+      empty_directory File.join("db", "landlord", "migrate")
     end
   end
 end
