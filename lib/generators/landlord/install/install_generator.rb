@@ -6,5 +6,8 @@ module Landlord
       template "landlord.rb", File.join("config", "initializers", "landlord.rb")
     end
 
+    def create_directory
+      empty_directory File.join("db", "landlord", "migrate"
+    end
   end
 end
